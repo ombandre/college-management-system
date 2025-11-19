@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import AdminSignUp from "./pages/auth/AdminSignUp";
-import AdminSignIn from "./pages/auth/AdminSignIn";
+import UserSignUp from "./pages/auth/UserSignUp";
+import UserSignIn from "./pages/auth/UserSignIn";
 
 function App() {
   return (
@@ -20,9 +20,11 @@ function App() {
         /> 
         */}
 
-        {/* User Signup Page */}
-        <Route path="/" element={<AdminSignIn />} />
-        <Route path="/admin-signup" element={<AdminSignUp />} />
+        {/* User Sign In Page (default route) */}
+        <Route path="/user-signin" element={<UserSignIn />} />
+
+        {/* User Sign Up Page */}
+        <Route path="/user-signup" element={<UserSignUp />} />
       </Routes>
     </div>
   );
