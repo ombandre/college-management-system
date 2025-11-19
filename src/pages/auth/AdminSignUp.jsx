@@ -47,9 +47,10 @@ const AdminSignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-white overflow-hidden">
-      <div className="flex flex-col justify-center w-full md:w-[50%] px-10 bg-white">
-        <div className="mb-8">
+    <div className="min-h-screen flex bg-white pd-4 md:py-0 overflow-hidden">
+      <div className="flex flex-col justify-center w-full md:w-[50%] px-8 md:px-16 lg:px-24 bg-white">
+        {/* HEADER */}
+        <div className="flex flex-col bg-white pl-4 md:pl-10 pt-4">
           <div className="flex items-center">
             <img
               src="assets/logo.png"
@@ -57,21 +58,22 @@ const AdminSignUp = () => {
               className="w-10 h-10 object-contain mr-3"
             />
             <h1 className="text-3xl font-bold text-blue-600">
-              College Connect (Admin)
+              College Connect
             </h1>
           </div>
-          <h2 className="text-2xl font-semibold text-gray-800 mt-3">
+          <h2 className="text-2xl font-semibold text-gray-900 mt-2 mb-4">
             Admin Signup
           </h2>
         </div>
 
+        {/* FORM */}
         <form
           onSubmit={handleSubmit}
           className="space-y-5 max-w-md mx-auto w-full"
         >
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium mb-1 text-gray-700">
               Full Name
             </label>
             <input
@@ -80,14 +82,15 @@ const AdminSignUp = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter full name"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 
+              focus:ring-2 focus:ring-blue-400 focus:outline-none"
               required
             />
           </div>
 
           {/* Mobile */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium mb-1 text-gray-700">
               Mobile Number
             </label>
             <input
@@ -98,14 +101,15 @@ const AdminSignUp = () => {
               placeholder="Enter mobile number"
               maxLength={10}
               pattern="[0-9]{10}"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 
+              focus:ring-2 focus:ring-blue-400 focus:outline-none"
               required
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium mb-1 text-gray-700">
               Email Address
             </label>
             <input
@@ -114,14 +118,15 @@ const AdminSignUp = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter email"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 
+              focus:ring-2 focus:ring-blue-400 focus:outline-none"
               required
             />
           </div>
 
           {/* College Code */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium mb-1 text-gray-700">
               College Code
             </label>
             <input
@@ -130,15 +135,16 @@ const AdminSignUp = () => {
               value={formData.coCode}
               onChange={handleChange}
               placeholder="Enter college/institute code"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 
+              focus:ring-2 focus:ring-blue-400 focus:outline-none"
               required
             />
           </div>
 
-          {/* Passwords */}
+          {/* Password + Confirm */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium mb-1 text-gray-700">
                 Password
               </label>
               <input
@@ -147,13 +153,14 @@ const AdminSignUp = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Enter password"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 
+                focus:ring-2 focus:ring-blue-400 focus:outline-none"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium mb-1 text-gray-700">
                 Confirm Password
               </label>
               <input
@@ -162,13 +169,14 @@ const AdminSignUp = () => {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 placeholder="Confirm password"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 
+                focus:ring-2 focus:ring-blue-400 focus:outline-none"
                 required
               />
             </div>
           </div>
 
-          {error && <p className="text-center text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
           <button
             type="submit"
@@ -177,7 +185,7 @@ const AdminSignUp = () => {
             Sign Up
           </button>
 
-          <p className="text-center text-sm text-gray-600 mt-3">
+          <p className="text-center text-sm text-gray-600 mt-1">
             Already an Admin?{" "}
             <span
               className="text-blue-600 cursor-pointer hover:underline"
@@ -189,11 +197,16 @@ const AdminSignUp = () => {
         </form>
       </div>
 
-      <div className="hidden md:flex w-[70%] bg-gradient-to-br from-blue-100 to-blue-50 items-center justify-center relative">
+      {/* RIGHT IMAGE */}
+      <div
+        className="hidden md:flex w-[70%] bg-gradient-to-br from-blue-100 to-blue-50 
+      items-center justify-center relative overflow-visible"
+      >
         <img
           src="assets/signupimage1.png"
           alt="Admin Illustration"
-          className="w-4/5 rounded-2xl shadow-lg object-cover absolute right-[-40px]"
+          className="w-4/5 rounded-2xl shadow-2xl object-cover border-3 border-black 
+          absolute right-[-40px]"
         />
       </div>
     </div>
