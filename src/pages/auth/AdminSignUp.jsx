@@ -191,7 +191,7 @@ const AdminSignUp = () => {
 
       <div className="hidden md:flex w-[70%] bg-gradient-to-br from-blue-100 to-blue-50 items-center justify-center relative">
         <img
-          src="assets/signupimage2.png"
+          src="assets/signupimage1.png"
           alt="Admin Illustration"
           className="w-4/5 rounded-2xl shadow-lg object-cover absolute right-[-40px]"
         />
