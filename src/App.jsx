@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import UserSignUp from "./pages/auth/UserSignUp";
 import UserSignIn from "./pages/auth/UserSignIn";
+import AdminSignUp from "./pages/auth/AdminSignUp";
+import AdminSignIn from "./pages/auth/AdminSignIn"; 
+
 
 function App() {
   return (
@@ -25,6 +28,14 @@ function App() {
 
         {/* User Sign Up Page */}
         <Route path="/user-signup" element={<UserSignUp />} />
+
+        {/* Admin Sign In Page */}
+        <Route path="/admin-signin" element={<AdminSignIn />} />    
+
+        {/* Admin Sign Up Page */}
+        <Route path="/admin-signup" element={<AdminSignUp />} />
+
+
       </Routes>
     </div>
   );
